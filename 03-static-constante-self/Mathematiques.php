@@ -26,7 +26,11 @@ class Mathematiques
 
     public static function division(float $a,float $b)
     {
-        return $a / $b;
+        if (Mathematiques::isNull($b) == true) {
+            return 'division impossible';
+        }else{
+            return $a / $b;
+        }
     }
 
     public static function multiplication(float $a,float $b)
@@ -41,7 +45,6 @@ class Mathematiques
 
     private static function isNull(float $number):bool
     {
-        var_dump($number);
         if ($number == 0) {
             return true;
         }else{
