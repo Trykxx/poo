@@ -47,7 +47,15 @@ class Books
      * @var string
      */
     public string $title;
+
+    /**
+     * @var string
+     */
     public string $author;
+
+    /**
+     * @var int
+     */
     public int $yearOfPublication = 1900;
 
     /**
@@ -132,6 +140,27 @@ class Manga
      */
     private string $author;
 
+    public function __construct($titre, $auteur)
+    {
+        $this->title = $titre;
+        $this->author = $auteur;
+    }
+
+    public function __destruct()
+    {
+        echo 'la variable a été detruite';
+    }
+
+    private static function hello()
+    {
+        return 'salut';
+    }
+
+    public function bonjour()
+    {
+        return  self::hello() . 'tout le monde';
+    }
+
     /**
      * @return string
      */
@@ -179,11 +208,16 @@ class Manga
     }
 }
 
-$Naruto = new Manga();
-$Naruto->setTitle("Naruto");
-$Naruto->setAuthor("Masashi Kishimoto");
+$naruto = new Manga('dragon ball', 'yamamoto');
+$naruto->setTitle("naruto");
+$naruto->setAuthor("Masashi Kishimoto");
+echo $naruto->read();
+echo $naruto->bonjour();
+
+
 echo '<br>';
-echo $Naruto->read();
+echo '<br>';
+unset($naruto);
 
 /*------------------------------------*\
     # GETTER | # SETTER
@@ -218,3 +252,16 @@ echo $Naruto->read();
 
 // Une constante est une valeur qui ne peut pas être modifiée.
 // Une constante est statique.
+
+/*------------------------------------*\
+    # HÉRITAGE
+\*------------------------------------*/
+
+// L'héritage permet de créer une classe enfant qui hérite des propriétés et des méthodes d'une classe parent.
+// L'héritage permet de créer une classe enfant qui peut avoir des propriétés et des méthodes supplémentaires.
+
+/*------------------------------------*\
+    # POLYMORPHISME
+\*------------------------------------*/
+
+// Le polymorphisme permet de redéfinir une méthode dans une classe enfant.
