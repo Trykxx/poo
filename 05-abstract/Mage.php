@@ -35,6 +35,4 @@ class Mage extends Player
     public function hit(){
         $this->life = $this->life - 30;
     }
-
-    //test
 }
