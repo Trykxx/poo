@@ -1,4 +1,6 @@
 <?php
+// require_once '../06-interface/Guerison.php';
+
 abstract class Player
 {
     protected string $name;

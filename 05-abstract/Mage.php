@@ -1,8 +1,9 @@
 <?php
 
 require_once './Player.php';
+// require_once '../06-interface/Guerison.php';
 
-class Mage extends Player
+class Mage extends Player implements Guerison
 {
     private int $mana;
 
@@ -34,5 +35,14 @@ class Mage extends Player
 
     public function hit(){
         $this->life = $this->life - 30;
+    }
+
+    public function reanime():void
+    {
+
+    }
+    public function nourrir(int $n):int
+    {
+        return $n;
     }
 }
