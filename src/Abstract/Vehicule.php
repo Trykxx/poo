@@ -1,4 +1,7 @@
 <?php
+namespace App\Abstract;
+
+use App\Entity\User;
 
 abstract class Vehicule
 {
@@ -30,9 +33,20 @@ abstract class Vehicule
      * @return  self
      */
     public function setNbTest($nbTest)
+
     {
         $this->nbTest = $nbTest;
 
         return $this;
+    }
+
+    public function accident(User $user, bool $isBlesse):string
+    {
+        $user->setBlessure($isBlesse);
+
+        if ($user->getBlessure()) {
+            return "{$user->getPseudo()} a eu un accident et il est blessé";
+        }
+        return "{$user->getPseudo()} n'a pas eu d'accident et n'est pas blessé";
     }
 }

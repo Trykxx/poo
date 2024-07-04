@@ -1,6 +1,7 @@
 <?php
+namespace App\Utilitaire;
 
-require_once './User.php';
+use App\Entity\User;
 
 interface Engine
 {
